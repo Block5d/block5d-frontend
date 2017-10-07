@@ -13,6 +13,11 @@ import { LoginComponent } from './login/login.component';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectMembersComponent } from './project-members/project-members.component';
+import { CompanyComponent } from './company/company.component';
+import { ManageScComponent } from './manage-sc/manage-sc.component';
+import { ViewDesignmodelComponent } from './view-designmodel/view-designmodel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { MembersComponent } from './members/members.component';
     LoginComponent,
     EmailComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    ProjectsComponent,
+    ProjectMembersComponent,
+    CompanyComponent,
+    ManageScComponent,
+    ViewDesignmodelComponent
   ],
   imports: [
     BrowserModule,

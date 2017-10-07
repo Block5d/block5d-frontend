@@ -8,13 +8,18 @@ import { AuthGuard } from './auth';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectMembersComponent } from './project-members/project-members.component';
+
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login-email', component: EmailComponent },
-    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] }
-
+    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
+    { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
+    { path: 'project-members', component: ProjectMembersComponent, canActivate: [AuthGuard] }
+    
 ]
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
