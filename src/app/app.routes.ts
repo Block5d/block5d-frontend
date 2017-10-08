@@ -10,6 +10,8 @@ import { EmailComponent } from './email/email.component';
 
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectMembersComponent } from './project-members/project-members.component';
+import { CompanyComponent } from './company/company.component';
+
 
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,8 +20,8 @@ export const router: Routes = [
     { path: 'login-email', component: EmailComponent },
     { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
     { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
-    { path: 'project-members', component: ProjectMembersComponent, canActivate: [AuthGuard] }
-    
+    { path: 'project-members', component: ProjectMembersComponent, canActivate: [AuthGuard] },
+    { path: 'companies', component: CompanyComponent, canActivate: [AuthGuard] }
 ]
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
