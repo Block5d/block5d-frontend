@@ -1,0 +1,55 @@
+
+<div><company-search></company-search></div>
+<div>
+    <!--<label>Company name:</label> <input #companyName />-->
+
+    <!--<a routerLink="/companies" routerLinkActive="active">Companies</a>-->
+    <!--<button (click)="add(companyName.value); companyName.value=''" routerLink="/modal-basic" routerLinkActive="active">Add</button>-->
+    <button class="add" (click)="showDialog=!showDialog" class="btn">Add</button>
+    <app-dialog [(visible)]="showDialog">
+      <h1>Add</h1>
+      <button (click) ="showDialog=!showDialog" class="btn">Close</button>
+    </app-dialog>
+  </div>
+
+  <ul class="companies">
+    <li *ngFor="let company of companies" (click)="onSelect(company)"
+        [class.selected]="company === selectedCompany">
+      <span class="badge">{{company.id}}</span>
+      <span>{{company.name}}</span>
+    </li>
+</ul>
+      <button class="delete" (click)="delete(company); $event.stopPropagation()">x</button>
+      <button class = "edit" (click)="showEdit=!showEdit" class="btn">Edit</button>
+      <app-edit [(visible)]="showEdit">
+        <h1>Edit</h1>
+      </app-edit>
+   
+  
+  <div *ngIf="selectedCompany">
+    <h2>
+      {{selectedCompany.name | uppercase}} is the company
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
+
+
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Home</h1>
+    <p>{{bodyText}}</p>
+    <button (click)="openModal('custom-modal-1')">Modal</button>
+</div>
+
+<modal id="custom-modal-1">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>Modal!</h1>
+            <p>
+                Home page text: <input type="text" [(ngModel)]="bodyText" />
+            </p>
+            <button (click)="closeModal('custom-modal-1');">Close</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
