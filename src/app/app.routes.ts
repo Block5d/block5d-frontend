@@ -14,6 +14,12 @@ import { AppCompanyComponent }     from './company/app.component';
 import { NgModule }                from '@angular/core';
 //import { CompaniesComponent }      from './company/companies.component';
 //import { CompanyDetailComponent }  from './company/company-detail.component';
+import { CompanyComponent } from './company/company.component';
+
+
+import { ProjectDetailComponent }  from './projects/project-detail.component';
+
+
 
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,6 +31,10 @@ export const router: Routes = [
     { path: 'project-members', component: ProjectMembersComponent, canActivate: [AuthGuard] },
     //{ path: 'detail/:id', component: CompanyDetailComponent,canActivate: [AuthGuard] },
     //{ path: 'companies',  component: CompaniesComponent,canActivate: [AuthGuard] },
+    { path: 'companies', component: CompanyComponent, canActivate: [AuthGuard] },
+    { path: 'detail/:id', component: ProjectDetailComponent, canActivate: [AuthGuard] },
+    //{ path: 'projects', component: ProjectDetailComponent, canActivate: [AuthGuard] },
+
 ]
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

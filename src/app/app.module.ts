@@ -7,8 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule}      from './company/app-routing.module';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './company/in-memory-data.service';
+
 import { RouterModule}       from '@angular/router';
 
 
@@ -36,6 +35,11 @@ import { EditComponent}   from './company/edit.component';
 import { ModalComponent } from './company/_directives/index';
 import { ModalService } from './company/_services/index';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './projects/in-memory-data.service';
+import { ProjectDetailComponent }  from './projects/project-detail.component';
+import { ProjectService }          from './projects/project.service';
+import { ProjectSearchComponent }  from './projects/project-search.component';
 
 @NgModule({
   declarations: [
@@ -47,16 +51,17 @@ import { ModalService } from './company/_services/index';
     ProjectsComponent,
     ProjectMembersComponent,
     ManageScComponent,
-    ViewDesignmodelComponent,
-
     AppCompanyComponent,
     CompanyDetailComponent,
     CompaniesComponent,
     CompanySearchComponent,
     DialogComponent,
     EditComponent,
-    ModalComponent
-   
+    ModalComponent,
+    ViewDesignmodelComponent,
+    ProjectDetailComponent,
+    ProjectSearchComponent
+
   ],
 
   imports: [
@@ -71,7 +76,7 @@ import { ModalService } from './company/_services/index';
     AppRoutingModule
   ],
 
-  providers: [AuthGuard,CompanyService, ModalService],
+  providers: [AuthGuard,CompanyService, ModalService,ProjectService],
   bootstrap: [AppComponent]
 
 })
