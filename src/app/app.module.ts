@@ -19,6 +19,12 @@ import { CompanyComponent } from './company/company.component';
 import { ManageScComponent } from './manage-sc/manage-sc.component';
 import { ViewDesignmodelComponent } from './view-designmodel/view-designmodel.component';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './projects/in-memory-data.service';
+import { ProjectDetailComponent }  from './projects/project-detail.component';
+import { ProjectService }          from './projects/project.service';
+import { ProjectSearchComponent }  from './projects/project-search.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,11 @@ import { ViewDesignmodelComponent } from './view-designmodel/view-designmodel.co
     ProjectMembersComponent,
     CompanyComponent,
     ManageScComponent,
-    ViewDesignmodelComponent
+    
+    ViewDesignmodelComponent,
+    ProjectDetailComponent,
+    ProjectSearchComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,9 +49,12 @@ import { ViewDesignmodelComponent } from './view-designmodel/view-designmodel.co
     HttpModule,
     NgbModule.forRoot(),
     FirebaseModule,
-    routes
+    routes,
+
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
