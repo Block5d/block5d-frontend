@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
-import { ModalService}       from './_services/index';
 import { Company }                from '../company/company';
 import { CompanyService }         from '../company/company.service';
 
 @Component({
-  moduleId: module.id.toString(),
   selector: 'my-companies',
   templateUrl: './companies.component.html',
   styleUrls: [ './companies.component.css' ]
@@ -16,11 +14,9 @@ export class CompaniesComponent implements OnInit {
   showDialog=false;
   showEdit=false;
 
-  private bodyText:string;
   constructor(
     private companyService: CompanyService,
-    private router: Router,
-    private modalService: ModalService) { }
+    private router: Router,) { }
 
   getCompanies(): void {
     this.companyService
@@ -49,7 +45,6 @@ export class CompaniesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCompanies();
-    this.bodyText="This text can be updated in modal";
   }
 
   onSelect(company: Company): void {
@@ -59,11 +54,5 @@ export class CompaniesComponent implements OnInit {
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedCompany.id]);
   }
-  openModal(id:string){
-      this.modalService.open(id);
-
-  }
-  closeModal(id:string){
-      this.modalService.close(id);
-  }
+  
 }

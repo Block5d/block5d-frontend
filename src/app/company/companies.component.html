@@ -1,5 +1,6 @@
 
 <div><company-search></company-search></div>
+
 <div>
     <!--<label>Company name:</label> <input #companyName />-->
 
@@ -13,12 +14,13 @@
   </div>
 
   <ul class="companies">
-    <li *ngFor="let company of companies" (click)="onSelect(company)"
+    <li *ngFor="let company of companies" (click)="onSelect(company)" 
         [class.selected]="company === selectedCompany">
       <span class="badge">{{company.id}}</span>
       <span>{{company.name}}</span>
     </li>
 </ul>
+
       <button class="delete" (click)="delete(company); $event.stopPropagation()">x</button>
       <button class = "edit" (click)="showEdit=!showEdit" class="btn">Edit</button>
       <app-edit [(visible)]="showEdit">
@@ -32,24 +34,6 @@
     </h2>
     <button (click)="gotoDetail()">View Details</button>
   </div>
+  <router-outlet></router-outlet>
 
-
-  <div class="col-md-6 col-md-offset-3">
-    <h1>Home</h1>
-    <p>{{bodyText}}</p>
-    <button (click)="openModal('custom-modal-1')">Modal</button>
-</div>
-
-<modal id="custom-modal-1">
-    <div class="modal">
-        <div class="modal-body">
-            <h1>Modal!</h1>
-            <p>
-                Home page text: <input type="text" [(ngModel)]="bodyText" />
-            </p>
-            <button (click)="closeModal('custom-modal-1');">Close</button>
-        </div>
-    </div>
-    <div class="modal-background"></div>
-</modal>
 
