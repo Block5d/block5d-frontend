@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -34,6 +35,11 @@ import { ProjectDetailComponent }  from './projects/project-detail.component';
 import { ProjectService }          from './projects/project.service';
 import { ProjectSearchComponent }  from './projects/project-search.component';
 
+import { ProjectMembersService }          from './project-members/project-members.service';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,12 +71,18 @@ import { ProjectSearchComponent }  from './projects/project-search.component';
     HttpModule,
     NgbModule.forRoot(),
     FirebaseModule,
+    HttpClientModule,
     routes,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     
   ],
 
-  providers: [AuthGuard, CompanyService, ProjectService],
+  providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+      }, AuthGuard, CompanyService, ProjectService, ProjectMembersService,
+    ],
   bootstrap: [AppComponent]
 
 })
