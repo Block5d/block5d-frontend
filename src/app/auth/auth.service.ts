@@ -5,6 +5,7 @@ import { Observable } from "rxjs/Rx";
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -17,7 +18,7 @@ export class AuthGuard implements CanActivate {
         .map(state => !!state)
         .do(authenticated => {
       if 
-        (!authenticated) this.router.navigate([ '/login' ]);
+        (!authenticated) this.router.navigate([ environment.loginpath ]);
       })
     }
  

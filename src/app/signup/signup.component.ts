@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuthModule, AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-signup',
@@ -26,7 +27,7 @@ export class SignupComponent implements OnInit {
         formData.value.password
       ).then(
         (success) => {
-        this.router.navigate(['/members'])
+        this.router.navigate([environment.homepath])
       }).catch(
         (err) => {
         this.error = err;

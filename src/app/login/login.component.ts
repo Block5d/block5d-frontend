@@ -3,6 +3,7 @@ import { AngularFireAuthModule, AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { moveIn } from '../router.animations';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(public af: AngularFireAuth,private router: Router) {
     this.af.auth.onAuthStateChanged(auth => { 
       if(auth) {
-        this.router.navigateByUrl('/members');
+        this.router.navigateByUrl(environment.homepath);
       }
     });
   }
@@ -31,9 +32,9 @@ export class LoginComponent implements OnInit {
       // The signed-in user info.
       var user = result.user;
       if(user){
-        this.router.navigate(['/members']);
+        this.router.navigate([environment.homepath]);
       }else{
-        this.router.navigate(['/login']);
+        this.router.navigate([environment.loginpath]);
       }
     });
     
@@ -49,9 +50,9 @@ export class LoginComponent implements OnInit {
       // The signed-in user info.
       var user = result.user;
       if(user){
-        this.router.navigate(['/members']);
+        this.router.navigate([environment.homepath]);
       }else{
-        this.router.navigate(['/login']);
+        this.router.navigate([environment.loginpath]);
       }
     });
   

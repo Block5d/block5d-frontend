@@ -8,5 +8,7 @@ import { firebaseConfig } from './firebase';
 export const environment = {
   production: false,
   firebase: firebaseConfig,
-  url: 'http://localhost:4000/'
+  url: 'http://localhost:4000/',
+  homepath: '/members',
+  loginpath: '/login'
 };

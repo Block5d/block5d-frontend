@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuthModule, AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-email',
@@ -19,7 +20,7 @@ export class EmailComponent implements OnInit {
     constructor(public af: AngularFireAuth,private router: Router) {
       this.af.auth.onAuthStateChanged(auth => { 
         if(auth) {
-          this.router.navigateByUrl('/members');
+          this.router.navigateByUrl(environment.homepath);
         }
       });
   }
@@ -34,7 +35,7 @@ export class EmailComponent implements OnInit {
       ).then(
         (success) => {
         console.log(success);
-        this.router.navigate(['/members']);
+        this.router.navigate([environment.homepath]);
       }).catch(
         (err) => {
         console.log(err);

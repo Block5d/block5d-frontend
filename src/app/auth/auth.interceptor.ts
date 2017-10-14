@@ -12,14 +12,14 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(public auth: AngularFireAuth) {
-    console.log(this.auth.idToken);
+    console.log(this.auth.auth.currentUser.getIdToken());
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(this.auth.idToken);
+    console.log(this.auth.auth.currentUser.getIdToken());
     request = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${this.auth.idToken}`
+        Authorization: `Bearer ${this.auth.auth.currentUser.getIdToken()}`
       }
     });
     return next.handle(request);

@@ -4,5 +4,7 @@ import { firebaseConfig } from './firebase';
 export const environment = {
   production: true,
   firebase: firebaseConfig,
-  url: 'http://localhost:4000/'
+  url: 'http://localhost:4000/',
+  homepath: '/members',
+  loginpath: '/login'
 };

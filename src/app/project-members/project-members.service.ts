@@ -1,20 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Headers, Http, Response, URLSearchParams } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+
 import { environment } from '../../environments/environment';
+import { User } from '../models/user.model'
 
 @Injectable()
 export class ProjectMembersService {
 
   constructor(private http: Http) { }
 
-  getAllUsers() {
-    console.log(environment.url);
-    console.log("--->");
-    return this.http.get(`${environment.url}api/users`)
-        .map((res:Response) => res.json())
-        .catch(this.handleError);
+  private formatErrors(error: any) {
+    console.log(JSON.stringify(error));
+    return Observable.throw(error.json());
+  }
+
+  getAllUsers(): Observable<User[]> {
+    console.log(`${environment.url}api/users`);
+    return this.http.get(`${environment.url}api/users`, { })
+    .map((res: Response) => <User[]>res.json())
+    .catch(this.formatErrors);
   }
 
   private handleError (error: Response | any) {
