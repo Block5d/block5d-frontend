@@ -10,5 +10,6 @@ export const environment = {
   firebase: firebaseConfig,
   url: 'http://localhost:4000/',
   homepath: '/members',
-  loginpath: '/login'
+  loginpath: '/login',
+  firebaseTokenKey: 'FIREBASE_TOKEN'
 };

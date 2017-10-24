@@ -11,11 +11,13 @@ export class ProjectMembersComponent implements OnInit {
   users: any = [];
 
   ngOnInit() {
-    /*
+    console.log("->>>-->1");
+    
     this.projectMembersService.getAllUsers().subscribe(users => {
-      console.log("->>>-->");
+      console.log("->>>-->" + JSON.stringify(users));
       this.users = users;
-    });*/
+    });
+
   }
 
 }

@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule}       from '@angular/router';
 import { FirebaseModule }    from './firebase';
+
+
 import { AuthGuard }         from './auth';
 import { routes }            from './app.routes';
 import { LoginComponent }    from './login/login.component';
@@ -27,10 +28,8 @@ import { CompanySearchComponent }  from './company/company-search.component';
 import { DialogComponent} from './company/dialog.component';
 import { EditComponent}   from './company/edit.component';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { ProjectsComponent } from './projects/projects.component';
-import { InMemoryDataService }  from './projects/in-memory-data.service';
 import { ProjectDetailComponent }  from './projects/project-detail.component';
 import { ProjectService }          from './projects/project.service';
 import { ProjectSearchComponent }  from './projects/project-search.component';
@@ -39,6 +38,7 @@ import { ProjectMembersService }          from './project-members/project-member
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import {Ng2Webstorage} from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -56,25 +56,20 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     CompanySearchComponent,
     DialogComponent,
     EditComponent,
- 
-   
     ProjectsComponent,
     ProjectDetailComponent,
     ProjectSearchComponent
-
   ],
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
-    NgbModule.forRoot(),
-    FirebaseModule,
     HttpClientModule,
-    routes,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-    
+    NgbModule.forRoot(),
+    Ng2Webstorage,    
+    FirebaseModule,
+    routes
   ],
 
   providers: [{
@@ -86,6 +81,5 @@ import { AuthInterceptor } from './auth/auth.interceptor';
   bootstrap: [AppComponent]
 
 })
-
 
 export class AppModule { }

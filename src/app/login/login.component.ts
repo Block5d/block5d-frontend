@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.css'],
   animations: [moveIn()],
   host: {'[@moveIn]': ''}
 })
@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
       // The signed-in user info.
       var user = result.user;
       if(user){
+        console.log(user);
         this.router.navigate([environment.homepath]);
       }else{
         this.router.navigate([environment.loginpath]);

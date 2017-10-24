@@ -4,11 +4,12 @@ import { AngularFireAuthModule, AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
 import { environment } from '../../environments/environment';
+import {LocalStorageService} from 'ngx-webstorage';
 
 @Component({
   selector: 'app-email',
   templateUrl: './email.component.html',
-  styleUrls: ['./email.component.scss'],
+  styleUrls: ['./email.component.css'],
   animations: [moveIn(), fallIn()],
   host: {'[@moveIn]': ''}
 })
@@ -17,7 +18,8 @@ export class EmailComponent implements OnInit {
     state: string = '';
     error: any;
 
-    constructor(public af: AngularFireAuth,private router: Router) {
+    constructor(public af: AngularFireAuth,private router: Router,
+      private storage:LocalStorageService) {
       this.af.auth.onAuthStateChanged(auth => { 
         if(auth) {
           this.router.navigateByUrl(environment.homepath);
@@ -35,6 +37,10 @@ export class EmailComponent implements OnInit {
       ).then(
         (success) => {
         console.log(success);
+        this.af.auth.currentUser.getIdToken().then((token)=>{
+          console.log("LOGIN TOKEN ==> " + token);
+          this.storage.store(environment.firebaseTokenKey, token);
+        })
         this.router.navigate([environment.homepath]);
       }).catch(
         (err) => {
