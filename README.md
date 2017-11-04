@@ -1,3 +1,12 @@
+#### Allowed `<type>`
+* feat (feature)
+* fix (bug fix)
+* docs (documentation)
+* style (formatting, missing semi colons, …)
+* refactor
+* test (when adding missing tests)
+* chore (maintain)
+
 # Block5dFrontend
 Kenneth 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
