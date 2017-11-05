@@ -1,8 +1,11 @@
-<div class="form-container">
-  <button class="btn btn-sm btn-outline-primary" routerLink="/login-email" id="email">Email</button>
-  <div class="clearfix"></div>
-  <button class="btn btn-sm btn-outline-primary" (click)="loginFb()" id="fb">Facebook</button>
-  <br>
-  <button class="btn btn-sm btn-outline-primary" (click)="loginGoogle()" id="google">Google</button>
-  <a routerLink="/signup" routerLinkActive="active" class="alc">Already registered? <strong>Sign Up</strong></a>        
-</div>
+<div class="container">
+        <form class="form-signin">
+          <button class="btn btn-lg btn-primary btn-block" routerLink="/login-email" id="email"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Email</button>
+          <br/>
+          <button class="btn btn-lg btn-primary btn-block" (click)="loginFb()" id="fb"><i class="fa fa fa-facebook-official fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Facebook</button>
+          <br/>
+          <button class="btn btn-lg btn-primary btn-block" (click)="loginGoogle()" id="google"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>Google</button>
+          <br/>
+          <a routerLink="/signup" routerLinkActive="active" class="alc">Already registered? <strong>Sign Up</strong></a>
+        </form>
+</div> <!-- /container -->

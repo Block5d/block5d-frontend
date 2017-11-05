@@ -1,67 +1,193 @@
-<h1> Hello</h1>
-<!--
-  <div *ngIf="project">
-    <br>
-    <div>
-      <label>id: {{project.id}}</label>
-    </div>
-    <div>
-      <h2>name: {{project.name}} </h2>
-    </div>
-  
-    <div>
-        <label>Development: </label>
-        <input [(ngModel)]="project.Development" placeholder="Development" />
-      </div>
-      <br>
-      <div class="formfield">
-          <label for="textarea">Scope Of Works:</label>
-          <textarea type=specialInput id="textarea" rows="6" [(ngModel)]="project.ScopeOfWorks"></textarea>
-      </div>
-      <br>
-    <div>
-      <label>Client: </label>
-      <input [(ngModel)]="project.Client" placeholder="Client" />
-    </div>
-    <br>
-    <div>
-      <label>Project Manager: </label>
-      <input [(ngModel)]="project.ProjectManager" placeholder="Project Manager" />
-    </div>
-    <br>
-    <div>
-      <label>Architect: </label>
-      <input [(ngModel)]="project.Architect" placeholder="Architect" />
-    </div>
-    <br>
-    <div>
-      <label>Design Architect: </label>
-      <input [(ngModel)]="project.DesignArchitect" placeholder="Design Architect" />
-    </div>
-    <br>
-    <div>
-      <label>Quantity Surveyor: </label>
-      <input [(ngModel)]="project.QuantitySurveyor" placeholder="Quantity Surveyor" />
-    </div>
-    <br>
-    <div>
-      <label>C&S Engineer: </label>
-      <input [(ngModel)]="project.CandSEngineer" placeholder="C&S Engineer" />
-    </div>
-    <br>
-    <div>
-      <label>Services Engineer: </label>
-      <input [(ngModel)]="project.ServicesEngineer" placeholder="Services Engineer" />
-    </div>
-    <br>
-    <div>
-      <label>Main Contractor: </label>
-      <input [(ngModel)]="project.MainContractor" placeholder="Main Contractor" />
-    </div>
-  
-  
-    <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
+<div *ngIf="project">
+  <br>
+  <div>
+    <label>id: {{project.id}}</label>
+  </div>
+  <div>
+    <h2>name: {{project.name}} </h2>
   </div>
 
--->
+  <div>
+    <label>Development: </label>
+    <input [(ngModel)]="project.Development" placeholder="Development" />
+  </div>
+  <br>
+  <!-- -->
+  <div class="formfield">
+    <label for="textarea">Scope Of Works:</label>
+    <textarea type=specialInput id="textarea" rows="6" [(ngModel)]="project.ScopeOfWorks"></textarea>
+  </div>
+  <br>
+  <div>
+    <label>Client: </label>
+    <input [(ngModel)]="project.Client" placeholder="Client" />
+  </div>
+  <br>
+  <div>
+    <label>Project Manager: </label>
+    <input [(ngModel)]="project.ProjectManager" placeholder="Project Manager" />
+  </div>
+  <br>
+  <div>
+    <label>Architect: </label>
+    <input [(ngModel)]="project.Architect" placeholder="Architect" />
+  </div>
+  <br>
+  <div>
+    <label>Design Architect: </label>
+    <input [(ngModel)]="project.DesignArchitect" placeholder="Design Architect" />
+  </div>
+  <br>
+  <div>
+    <label>Quantity Surveyor: </label>
+    <input [(ngModel)]="project.QuantitySurveyor" placeholder="Quantity Surveyor" />
+  </div>
+  <br>
+  <div>
+    <label>C&S Engineer: </label>
+    <input [(ngModel)]="project.CandSEngineer" placeholder="C&S Engineer" />
+  </div>
+  <br>
+  <div>
+    <label>Services Engineer: </label>
+    <input [(ngModel)]="project.ServicesEngineer" placeholder="Services Engineer" />
+  </div>
+  <br>
+  <div>
+    <label>Main Contractor: </label>
+    <input [(ngModel)]="project.MainContractor" placeholder="Main Contractor" />
+  </div>
+  <!--second page-->
+
+
+  <div class="form-group">
+    <br>
+    <label for="key">Attributes</label>
+    <select class="form-control" id="key" [(ngModel)]="project.key" name="key" #key="ngModel">
+    <option *ngFor="let ke of keys" [value]="ke">{{ke}}</option>
+    </select>
+    <br>
+    <br>
+    <div *ngIf="project.key=='Preliminaries'">
+
+      <div>
+        <label>Insurance: </label>
+        <input [(ngModel)]="project.Insurance" placeholder="Insurance" />
+      </div>
+      <br>
+      <div>
+        <label>Performance Bond: </label>
+        <input [(ngModel)]="project.PerformanceBond" placeholder="Performance Bond" />
+      </div>
+      <br>
+      <div>
+        <label>QECP: </label>
+        <input [(ngModel)]="project.QECP" placeholder="QECP" />
+      </div>
+      <br>
+      <div>
+        <label>Pre-con Survey: </label>
+        <input [(ngModel)]="project.PreConSurvey" placeholder="Pre-con Survey" />
+      </div>
+      <br>
+      <div>
+        <label>Pre-Computation & Surveyor: </label>
+        <input [(ngModel)]="project.PreComputationSurveyor" placeholder="Pre-Computation & Surveyor" />
+      </div>
+      <br>
+      <div>
+        <label>Services Detection: </label>
+        <input [(ngModel)]="project.ServicesDetection" placeholder="Services Detection" />
+      </div>
+      <br>
+      <div>
+        <label>Pest Control: </label>
+        <input [(ngModel)]="project.PestControl" placeholder="Pest Control" />
+      </div>
+      <br>
+      <div>
+        <label>CCTV Survey For Sewer: </label>
+        <input [(ngModel)]="project.CCTVSurveyForSewer" placeholder="CCTV Survey For Sewer" />
+      </div>
+      <br>
+      <div>
+        <label>Trees Removal: </label>
+        <input [(ngModel)]="project.TreesRemoval" placeholder="Trees Removal" />
+      </div>
+      <br>
+      <div>
+        <label>Arborist: </label>
+        <input [(ngModel)]="project.Arborist" placeholder="Arborist" />
+      </div>
+    </div>
+
+    <div *ngIf="project.key=='Substructure works'">
+
+      <div>
+        <label>NSC: </label>
+        <input [(ngModel)]="project.NSC" placeholder="NSC" />
+      </div>
+      <br>
+      <div>
+        <label>ERSS: </label>
+        <input [(ngModel)]="project.ERSS" placeholder="ERSS" />
+      </div>
+      <br>
+      <div>
+        <label>Piling: </label>
+        <input [(ngModel)]="project.Piling" placeholder="Piling" />
+      </div>
+      <br>
+      <div>
+        <label>PVD: </label>
+        <input [(ngModel)]="project.PVD" placeholder="PVD" />
+      </div>
+      <br>
+      <div>
+        <label>Earthworks <br> (including surcharge): </label>
+        <input [(ngModel)]="project.Earthworks" placeholder="Earthworks (including surcharge)" />
+      </div>
+      <br>
+      <div>
+        <label>Services Detection: </label>
+        <input [(ngModel)]="project.ServicesDetection" placeholder="Services Detection" />
+      </div>
+      <br>
+      <div>
+        <label>Sructural RC Works: </label>
+        <input [(ngModel)]="project.SructuralRCWorks" placeholder="Sructural RC Works" />
+      </div>
+      <br>
+      <div>
+        <label>CE Works: </label>
+        <input [(ngModel)]="project.CEWorks" placeholder="CE Works" />
+      </div>
+      <br>
+      <div>
+        <label>Sewer Works: </label>
+        <input [(ngModel)]="project.SewerWorks" placeholder="Sewer Works" />
+      </div>
+      <br>
+      <div>
+        <label>RMC supplier: </label>
+        <input [(ngModel)]="project.RMC" placeholder="RMC supplier" />
+      </div>
+      <br>
+      <div>
+        <label>Reinforcement Supplier: </label>
+        <input [(ngModel)]="project.ReinforcementSupplier" placeholder="Reinforcement Supplier" />
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

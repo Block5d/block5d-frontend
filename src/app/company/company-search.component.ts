@@ -19,7 +19,7 @@ import { Company } from './company';
   selector: 'company-search',
   templateUrl: './company-search.component.html',
   styleUrls: [ './company-search.component.css' ],
-  providers: [CompanySearchService]
+  providers: [  CompanySearchService]
 })
 export class CompanySearchComponent implements OnInit {
   companies: Observable<Company[]>;

@@ -14,7 +14,8 @@ import { ProjectService } from './project.service';
 })
 export class ProjectDetailComponent implements OnInit {
   project: Project;
-
+  keys = ["Preliminaries", "Substructure works"]
+  
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,

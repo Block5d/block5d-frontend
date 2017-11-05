@@ -7,5 +7,9 @@ import { firebaseConfig } from './firebase';
 
 export const environment = {
   production: false,
-  firebase: firebaseConfig
+  firebase: firebaseConfig,
+  url: 'http://localhost:4000/',
+  homepath: '/members',
+  loginpath: '/login',
+  firebaseTokenKey: 'FIREBASE_TOKEN'
 };
