@@ -1,7 +1,9 @@
 export class Company {
-    id: number;
-    name: string;
-    reg_no:number;
-    type: string;
-    
-  }
+  constructor(
+    public id: number,
+    public name: string,
+    public reg_no: number,
+    public type: string,
+  ) { }
+
+}

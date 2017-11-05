@@ -18,14 +18,15 @@
         [class.selected]="company === selectedCompany">
       <span class="badge">{{company.id}}</span>
       <span>{{company.name}}</span>
-    </li>
-</ul>
-
       <button class="delete" (click)="delete(company); $event.stopPropagation()">x</button>
       <button class = "edit" (click)="showEdit=!showEdit" class="btn">Edit</button>
       <app-edit [(visible)]="showEdit">
         <h1>Edit</h1>
       </app-edit>
+    </li>
+</ul>
+
+      
    
   
   <div *ngIf="selectedCompany">

@@ -4,7 +4,8 @@ import { firebaseConfig } from './firebase';
 export const environment = {
   production: true,
   firebase: firebaseConfig,
-  url: 'http://localhost:4000/',
+  url: 'https://block5d-frontend.herokuapp.com/',
   homepath: '/members',
-  loginpath: '/login'
+  loginpath: '/login',
+  firebaseTokenKey: 'FIREBASE_TOKEN'
 };
