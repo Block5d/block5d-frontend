@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "ng build --aot -prod",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server/app.js",
     "build": "ng build",
     "lint": "ng lint",
     "test": "jest --forceExit",
