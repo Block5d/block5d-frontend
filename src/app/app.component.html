@@ -7,22 +7,18 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/companies" id="companies">Companies<span class="sr-only">(current)</span></a>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Setup
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link" routerLink="/companies" id="companies">Companies<span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/projects" id="projects">Projects</a>
+            <a class="nav-link" routerLink="/project-members" id="projmembers">Project Members</a>
+            <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Manage Smart Contract</a>
+            <a class="nav-link" routerLink="/view-model" id="viewmodels">View Revit Model</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/projects" id="projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/project-members" id="projmembers">Project Members</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Manage Smart Contract</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/view-model" id="viewmodels">View Revit Model</a>
-        </li>
-        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Hey {{ name.email }}!
