@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static(__dirname + '/../dist'));
 // Start the app by listening on the default
 // Heroku port
-var PORT = process.env.PORT || process.argv[2] || config.PORT || 3000;
+var PORT = process.env.PORT || process.argv[2] || 3000;
 
 app.listen(PORT, ()=> {
     console.log("Server started on port %d...", PORT);

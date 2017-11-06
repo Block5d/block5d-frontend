@@ -1,0 +1,67 @@
+<div *ngIf="isLoggedIn">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Block5D</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Project Management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="nav-link" routerLink="/companies" id="companies">Companies<span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/projects" id="projects">Con. Project</a>
+          <a class="nav-link" routerLink="/project-members" id="projmembers">Project Members</a>
+          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Inspection Form</a>
+          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Upload Supporting Document</a>
+          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Project Schedule</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Smart Contract
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="nav-link" routerLink="/view-model" id="viewmodels">Upload Revit Model</a>
+          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Manage Smart Contract</a>
+          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Search Txn# on Smart Contract</a>
+          <a class="nav-link" routerLink="/view-model" id="viewmodels">Search Items on Revit Model</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          System
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="nav-link" routerLink="/projects" id="projects">User Group</a>
+          <a class="nav-link" routerLink="/project-members" id="projmembers">Permission</a>
+          <a class="nav-link" routerLink="/code-tables" id="codetables">Manage System-wide Codes</a>
+        </div>
+      </li>
+      
+    </ul>
+    
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hey {{ name.email }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Profile</a>
+          <button (click)="logout()" class="dropdown-item">Logout</button>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+
+
+

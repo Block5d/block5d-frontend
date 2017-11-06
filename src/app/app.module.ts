@@ -39,6 +39,8 @@ import { ProjectMembersService }          from './project-members/project-member
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import {Ng2Webstorage} from 'ngx-webstorage';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import {Ng2Webstorage} from 'ngx-webstorage';
     EditComponent,
     ProjectsComponent,
     ProjectDetailComponent,
-    ProjectSearchComponent
+    ProjectSearchComponent,
+    NavComponent,
+    FooterComponent
   ],
 
   imports: [
