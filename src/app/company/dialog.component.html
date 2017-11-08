@@ -1,9 +1,0 @@
-<div [@dialog] *ngIf="visible" class="dialog">
-    <ng-content></ng-content>
-    <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
-    <div><label>id: </label><input #companyid /></div>
-    <div><label>Name: </label><input #companyName /></div>
-    <div><label>No: </label><input #companyNo /></div>
-    <div><label>Type: </label><input #companyType /></div>
-</div>
-  <div *ngIf="visible" class="overlay" (click)="close()"></div>
