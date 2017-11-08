@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule}       from '@angular/router';
 import { FirebaseModule }    from './firebase';
 
-
 import { AuthGuard }         from './auth';
 import { routes }            from './app.routes';
 import { LoginComponent }    from './login/login.component';
@@ -31,6 +30,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CompaniesComponent } from './companies/companies.component';
 
+import { PaginationModule, TabsModule, ButtonsModule } from 'ngx-bootstrap';
+
+import { Ng2TableModule } from './ng-table-module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { CompaniesComponent } from './companies/companies.component';
     FooterComponent,
     ProjectsComponent,
     CompaniesComponent
+    
   ],
 
   imports: [
@@ -55,7 +59,12 @@ import { CompaniesComponent } from './companies/companies.component';
     NgbModule.forRoot(),
     Ng2Webstorage,    
     FirebaseModule,
-    routes
+    routes,
+    PaginationModule.forRoot(),
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    Ng2TableModule
+    
   ],
 
   providers: [{
