@@ -55,7 +55,7 @@ import { FooterComponent } from './footer/footer.component';
         provide: HTTP_INTERCEPTORS,
         useClass: AuthInterceptor,
         multi: true
-      }, AuthGuard, CompanyService, ProjectService, ProjectMembersService,
+      }, AuthGuard
     ],
   bootstrap: [AppComponent]
 
