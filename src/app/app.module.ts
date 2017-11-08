@@ -29,6 +29,7 @@ import {Ng2Webstorage} from 'ngx-webstorage';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProjectsComponent } from './projects/projects.component';
     ManageScComponent,
     NavComponent,
     FooterComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    CompaniesComponent
   ],
 
   imports: [

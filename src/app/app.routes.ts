@@ -9,6 +9,7 @@ import { EmailComponent } from './email/email.component';
 import { ProjectMembersComponent } from './project-members/project-members.component';
 import { NgModule } from '@angular/core';
 import { ProjectsComponent } from './projects/projects.component';
+import { CompaniesComponent} from './companies/companies.component';
 
 
 export const router: Routes = [
@@ -19,6 +20,7 @@ export const router: Routes = [
     { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
     { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
     { path: 'project-members', component: ProjectMembersComponent, canActivate: [AuthGuard] },
+    { path: 'companies', component: CompaniesComponent, canActivate: [AuthGuard] },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router, { useHash: true });
