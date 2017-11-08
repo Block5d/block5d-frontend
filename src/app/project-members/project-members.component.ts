@@ -19,6 +19,10 @@ export class ProjectMembersComponent implements OnInit {
     });
 
   }*/
+  public addBtnModel: string;
+  public editBtnModel: string;
+  public deleteBtnModel: string;
+  
 
   public rows:Array<any> = [];
   public columns:Array<any> = [
