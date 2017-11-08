@@ -20,22 +20,6 @@ import { ProjectMembersComponent }  from './project-members/project-members.comp
 import { ManageScComponent }        from './manage-sc/manage-sc.component';
 import { ViewDesignmodelComponent } from './view-designmodel/view-designmodel.component';
 
-
-import { CompaniesComponent }      from './company/companies.component';
-import { CompanyDetailComponent }  from './company/company-detail.component';
-import { CompanyService }          from './company/company.service';
-import { CompanySearchComponent }  from './company/company-search.component';
-import { DialogComponent} from './company/dialog.component';
-import { EditComponent}   from './company/edit.component';
-
-
-import { ProjectsComponent } from './projects/projects.component';
-import { ProjectDetailComponent }  from './projects/project-detail.component';
-import { ProjectService }          from './projects/project.service';
-import { ProjectSearchComponent }  from './projects/project-search.component';
-
-import { ProjectMembersService }          from './project-members/project-members.service';
-
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import {Ng2Webstorage} from 'ngx-webstorage';
@@ -52,15 +36,6 @@ import { FooterComponent } from './footer/footer.component';
     ViewDesignmodelComponent,
     ProjectMembersComponent,
     ManageScComponent,
-
-    CompanyDetailComponent,
-    CompaniesComponent,
-    CompanySearchComponent,
-    DialogComponent,
-    EditComponent,
-    ProjectsComponent,
-    ProjectDetailComponent,
-    ProjectSearchComponent,
     NavComponent,
     FooterComponent
   ],
