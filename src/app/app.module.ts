@@ -20,6 +20,9 @@ import { ProjectMembersComponent }  from './project-members/project-members.comp
 import { ManageScComponent }        from './manage-sc/manage-sc.component';
 import { ViewDesignmodelComponent } from './view-designmodel/view-designmodel.component';
 
+import { ProjectMembersService }          from './project-members/project-members.service';
+
+
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import {Ng2Webstorage} from 'ngx-webstorage';
@@ -55,7 +58,7 @@ import { FooterComponent } from './footer/footer.component';
         provide: HTTP_INTERCEPTORS,
         useClass: AuthInterceptor,
         multi: true
-      }, AuthGuard
+      }, AuthGuard, ProjectMembersService
     ],
   bootstrap: [AppComponent]
 
