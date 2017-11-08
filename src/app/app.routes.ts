@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { ProjectMembersComponent } from './project-members/project-members.component';
 import { NgModule } from '@angular/core';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 export const router: Routes = [
@@ -16,6 +17,7 @@ export const router: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'login-email', component: EmailComponent },
     { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
+    { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
     { path: 'project-members', component: ProjectMembersComponent, canActivate: [AuthGuard] },
 ];
 

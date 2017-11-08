@@ -28,6 +28,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import {Ng2Webstorage} from 'ngx-webstorage';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FooterComponent } from './footer/footer.component';
     ProjectMembersComponent,
     ManageScComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ProjectsComponent
   ],
 
   imports: [
