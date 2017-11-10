@@ -7,6 +7,7 @@ import { CompanyTableData} from './company-table-data';
 
 })
 export class CompaniesComponent implements OnInit {
+  showDialog=false;
 
   public addBtnModel:string;
   public editBtnModel: string;

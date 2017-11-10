@@ -6,14 +6,29 @@
               [ngTableFiltering]="config.filtering"
               class="form-control"
               (tableChanged)="onChangeTable(config)">
-              <button 
+              
+              <!--<button 
               type="submit" 
               class="btn btn-primary"
               [(ngModel)]="addBtnModel" btnCheckbox
               btnCheckboxTrue="1" btnCheckboxFalse="0"
               >
                Add
-              </button>
+              </button>-->
+              <button 
+              type="submit" 
+              class="btn btn-primary"
+              [(ngModel)]="addBtnModel" btnCheckbox
+              btnCheckboxTrue="1" btnCheckboxFalse="0" 
+              (click)="showDialog=!showDialog" >Add</button>
+              <!---->
+              <app-add-view [(visible)]="showDialog">
+                <h4>Add a Company</h4>
+                
+                <br>
+                <button (click)="showDialog=!showDialog" class="btn">Close</button>
+              </app-add-view>
+              <!---->
      </div>
    </div>
  </div>
