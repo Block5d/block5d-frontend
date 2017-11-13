@@ -34,6 +34,7 @@ import { PaginationModule, TabsModule, ButtonsModule } from 'ngx-bootstrap';
 
 import { Ng2TableModule } from './ng-table-module';
 import { AddViewComponent } from './companies/add-view/add-view.component';
+import { EditViewComponent } from './companies/edit-view/edit-view.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AddViewComponent } from './companies/add-view/add-view.component';
     FooterComponent,
     ProjectsComponent,
     CompaniesComponent,
-    AddViewComponent
+    AddViewComponent,
+    EditViewComponent
     
   ],
 

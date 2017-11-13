@@ -40,8 +40,13 @@ export class CompaniesComponent implements OnInit {
       filtering: {filterString: '', placeholder: 'Search by type'}
     },
     {
-      title: 'Action', 
-      name: 'action'}
+      title: 'Edit', 
+      name: 'edit'},
+    {
+      title:'Delete',
+      name:'delete'
+
+    }
 
   ];
 

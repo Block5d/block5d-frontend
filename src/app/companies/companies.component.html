@@ -24,10 +24,17 @@
               <!---->
               <app-add-view [(visible)]="showDialog">
                 <h4>Add a Company</h4>
+                <p>Name: <input type="text" /></p>
+                <p>ID: <input type="text"/></p>
+                <p>Registration number: <input type="text"  /></p>
+                <p>Type: <input type="text"/></p>
                 
                 <br>
-                <button (click)="showDialog=!showDialog" class="btn">Close</button>
+                
+                <button (click)="showDialog=!showDialog" class="btn btn-sucess">Close</button>
+                <button class="btn btn-sucess">Add</button>
               </app-add-view>
+              <!---->
               <!---->
      </div>
    </div>
