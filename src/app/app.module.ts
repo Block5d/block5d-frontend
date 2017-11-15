@@ -21,6 +21,10 @@ import { PaginationModule, TabsModule, ButtonsModule, BsDropdownModule } from 'n
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { Ng2TableModule } from './ng-table-module';
 
+import { AddViewComponent } from './components/companies/add-view.component';
+import { EditViewComponent } from './components/companies/edit-view.component';
+
+
 // Import directives
 import {
   AsideToggleDirective,
@@ -70,7 +74,9 @@ const APP_COMPONENTS = [
   NavComponent,
   FooterComponent,
   ProjectsComponent,
-  CompaniesComponent
+  CompaniesComponent,
+  AddViewComponent,
+  EditViewComponent
 ];
 
 @NgModule({

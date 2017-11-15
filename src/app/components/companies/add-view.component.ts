@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, Output, OnChanges, EventEmitter} from '@angular/core';
-import{ trigger, state, style, animate, transition} from '@angular/animations';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
-  selector: 'app-edit-view',
-  templateUrl: './edit-view.component.html',
-  styleUrls: ['./edit-view.component.scss'],
+  selector: 'app-add-view',
+  templateUrl: './add-view.component.html',
+  styleUrls: ['./add-view.component.scss'],
   animations:[
     trigger('dialog',[
       transition('void=>*',[
@@ -17,7 +17,7 @@ import{ trigger, state, style, animate, transition} from '@angular/animations';
     ])
   ]
 })
-export class EditViewComponent implements OnInit {
+export class AddViewComponent implements OnInit {
   @Input() closable=true;
   @Input() visible:boolean;
   @Output() visibleChange:EventEmitter<boolean>=new EventEmitter<boolean>();
