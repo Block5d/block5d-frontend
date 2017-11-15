@@ -1,15 +1,15 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { MembersComponent } from './members/members.component';
+import { LoginComponent } from './components/login/login.component';
+import { MembersComponent } from './components/members/members.component';
 import { AuthGuard } from './auth';
-import { SignupComponent } from './signup/signup.component';
-import { EmailComponent } from './email/email.component';
-import { ProjectMembersComponent } from './project-members/project-members.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { EmailComponent } from './components/email/email.component';
+import { ProjectMembersComponent } from './components/project-members/project-members.component';
 import { NgModule } from '@angular/core';
-import { ProjectsComponent } from './projects/projects.component';
-import { CompaniesComponent} from './companies/companies.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { CompaniesComponent} from './components/companies/companies.component';
 
 
 export const router: Routes = [
