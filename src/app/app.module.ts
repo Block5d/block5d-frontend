@@ -13,7 +13,7 @@ import { routes } from './app.routes';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import {Ng2Webstorage} from 'ngx-webstorage';
+import { Ng2Webstorage } from 'ngx-webstorage';
 
 import { PaginationModule, TabsModule, ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 // Import 3rd party components
@@ -55,7 +55,7 @@ import {
   NavComponent,
   FooterComponent,
   ProjectsComponent,
-  CompaniesComponent
+  CompaniesComponent,
 
 } from './components';
 
