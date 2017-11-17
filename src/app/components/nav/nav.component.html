@@ -92,7 +92,7 @@
         <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
           <a href class="nav-link dropdown-toggle" dropdownToggle (click)="false">
             <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-            <span class="d-md-down-none">admin</span>
+            <span class="d-md-down-none">{{ name.email }}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
     
@@ -109,7 +109,7 @@
               <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
               <div class="divider"></div>
             <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock account</a>
-            <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+            <a class="dropdown-item" href="#" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
           </div>
         </li>
         <button class="navbar-toggler d-md-down-none" type="button" appAsideMenuToggler>&#9776;</button>
@@ -131,7 +131,7 @@
               Block5d
             </li>
             <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
-              <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> Management</a>
+              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> Management</a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
                   <a class="nav-link" routerLinkActive="active" [routerLink]="['/companies']" id="companies"><i class="icon-puzzle"></i> Companies</a>
@@ -154,7 +154,7 @@
               </ul>
             </li>
             <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
-              <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> Smart Contract</a>
+              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> Smart Contract</a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
                   <a class="nav-link" routerLinkActive="active" [routerLink]="['/view-model']" id="viewmodels"><i class="icon-star"></i> Upload Revit Model</a>
@@ -171,7 +171,7 @@
               </ul>
             </li>
             <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
-              <a class="nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> System</a>
+              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> System</a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
                   <a class="nav-link" routerLinkActive="active" [routerLink]="['/projects']" id="projects"><i class="icon-calculator"></i> User Group</a>

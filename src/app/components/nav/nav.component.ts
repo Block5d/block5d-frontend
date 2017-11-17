@@ -9,20 +9,20 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  public disabled=false;
-  public status:{isopen:boolean}={isopen:false};
+  public disabled = false;
+  public status: { isopen: boolean} = { isopen: false};
+  isLoggedIn: boolean = false;
+  name: any;
 
-  public toggled(open:boolean):void{
+  public toggled(open: boolean): void {
     console.log('Dropdown is now:', open);
   }
 
-  public toggleDropdown($event:MouseEvent):void{
+  public toggleDropdown($event: MouseEvent): void {
     $event.preventDefault();
     $event.stopPropagation();
-    this.status.isopen=!this.status.isopen;
+    this.status.isopen =! this.status.isopen;
   }
-  isLoggedIn: boolean=false;
-  name: any;
   constructor(public af: AngularFireAuth, private router: Router,
     private storage: LocalStorageService) {
       this.af.auth.onAuthStateChanged(auth => {
