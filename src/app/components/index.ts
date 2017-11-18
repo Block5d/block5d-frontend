@@ -9,3 +9,4 @@ export * from './project-members';
 export * from './projects';
 export * from './signup';
 export * from './view-designmodel';
+export * from './app-breadcrumbs';

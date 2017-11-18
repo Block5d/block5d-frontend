@@ -60,6 +60,7 @@ import {
   FooterComponent,
   ProjectsComponent,
   CompaniesComponent,
+  AppBreadcrumbsComponent,
 
 } from './components';
 
@@ -76,7 +77,8 @@ const APP_COMPONENTS = [
   ProjectsComponent,
   CompaniesComponent,
   AddViewComponent,
-  EditViewComponent
+  EditViewComponent,
+  AppBreadcrumbsComponent
 ];
 
 @NgModule({

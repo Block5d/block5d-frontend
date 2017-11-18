@@ -1,68 +1,3 @@
-<!--<div *ngIf="isLoggedIn">
-<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-controls="exCollapsingNavbar2" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Block5D</a>
-  <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="exCollapsingNavbar2">
-    <ul class="navbar-nav navbar-left">
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Project Management
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="nav-link" routerLink="/companies" id="companies">Companies<span class="sr-only">(current)</span></a>
-          <a class="nav-link" routerLink="/projects" id="projects">Construction Projects</a>
-          <a class="nav-link" routerLink="/project-members" id="projmembers">Project Members</a>
-          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Inspection Form</a>
-          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Upload Supporting Document</a>
-          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Project Schedule</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Smart Contract
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="nav-link" routerLink="/view-model" id="viewmodels">Upload Revit Model</a>
-          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Manage Smart Contract</a>
-          <a class="nav-link" routerLink="/manage-sc" id="manager-contracts">Search Txn# on Smart Contract</a>
-          <a class="nav-link" routerLink="/view-model" id="viewmodels">Search Items on Revit Model</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          System
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="nav-link" routerLink="/projects" id="projects">User Group</a>
-          <a class="nav-link" routerLink="/project-members" id="projmembers">Permission</a>
-          <a class="nav-link" routerLink="/code-tables" id="codetables">Manage Codes</a>
-          <a class="nav-link" routerLink="/code-tables" id="codetables">Configure Workflow</a>
-        </div>
-      </li>
-      
-    </ul>
-    
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Hey {{ name.email }}
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Profile</a>
-          <button (click)="logout()" class="dropdown-item">Logout</button>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-</div>-->
 <div *ngIf="isLoggedIn">
   <header class="app-header navbar">
       <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>&#9776;</button>
@@ -124,32 +59,54 @@
         <nav class="sidebar-nav">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/members']"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+              <a class="nav-link" [routerLink]="['/members']"><i class="icon-speedometer"></i> Dashboard</a> <!-- <span class="badge badge-info">NEW</span>-->
             </li>
             <li class="divider"></li>
             <li class="nav-title">
               Block5d
             </li>
             <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
-              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-puzzle"></i> Management</a>
+              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="fa fa-briefcase fa-2x"></i> Project Management</a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/companies']" id="companies"><i class="icon-puzzle"></i> Companies</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/companies']" id="companies"><i class="icon-event"></i> Companies</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/projects']" id="projects"><i class="icon-puzzle"></i> Projects</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/projects']" id="projects"><i class="fa fa-building-o fa-2x"></i> Projects</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/project-members']" id="projmembers"><i class="icon-puzzle"></i> Project Members</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/project-members']" id="project-members"><i class="icon-people"></i> Project Members</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="icon-puzzle"></i> Inspection Forms</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="fa fa-calendar-check-o fa-2x"></i> Project Schedule</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="icon-puzzle"></i> Uploading</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="fa fa-id-card fa-2x"></i> Manage Dispute</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="icon-puzzle"></i> Project Schedule</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="fa fa-id-card fa-2x"></i> Upload Supporting Documents</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="fa fa-id-card fa-2x"></i> Search BQ</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> Forms</a>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="fa fa-id-card fa-2x"></i> Inspection Forms</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item nav-dropdown" routerLinkActive="open" appNavDropdown>
+              <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> BIM</a>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/view-model']" id="viewmodels"><i class="icon-star"></i> Upload Revit Model</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/view-model']" id="viewmodels"><i class="icon-star"></i> Search Items on Revit Model</a>
                 </li>
               </ul>
             </li>
@@ -157,16 +114,10 @@
               <a class="font-weight-bold nav-link nav-dropdown-toggle" href="#" appNavDropdownToggle><i class="icon-star"></i> Smart Contract</a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/view-model']" id="viewmodels"><i class="icon-star"></i> Upload Revit Model</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="fa fa-wpexplorer fa-2x"></i> Manage Smart Contract</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="icon-star"></i> Manage Smart Contract</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="icon-star"></i> Search Txn# on Smart Contract</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/view-model']" id="viewmodels"><i class="icon-star"></i> Search Items on Revit Model</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['/manage-sc']" id="manager-contracts"><i class="icon-star"></i> Search Smart Contract</a>
                 </li>
               </ul>
             </li>
@@ -180,7 +131,22 @@
                   <a class="nav-link" routerLinkActive="active" [routerLink]="['/project-members']" id="projmembers"><i class="icon-star"></i> Permission</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Manage Code</a>
+                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Manage Codes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Manage Forms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Manage Fields</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Form Designer</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Manage Field Dependencies</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]= "['/code-tables']" id="codetables"><i class="icon-star"></i> Manage Form Validation</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" routerLinkAvtive="active" [routerLink]= "['/coed-tables']" id="codetables"><i class="icon-star"></i> Configure Workflow</a>
@@ -194,7 +160,7 @@
 
           
               <!-- Breadcrumb -->
-              
+                <app-breadcrumbs></app-breadcrumbs>
                 <!-- Breadcrumb Menu-->
                 <li class="breadcrumb-menu d-md-down-none">
                   <div class="btn-group" role="group" aria-label="Button group with nested dropdown">

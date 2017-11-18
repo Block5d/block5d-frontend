@@ -1,3 +1,4 @@
+<div class="col-lg-12">
 <h3>Project Members</h3>
 <div class="row">
   <div class="col-md-4">
@@ -5,11 +6,11 @@
     <input *ngIf="config.filtering" placeholder="Filter all columns"
            [ngTableFiltering]="config.filtering"
            class="form-control"
-           (tableChanged)="onChangeTable(config)">
+           (tableChanged)="onChangeTable(config)">&nbsp;
            <button type="button" class="btn btn-primary"
            [(ngModel)]="addBtnModel" btnCheckbox
            btnCheckboxTrue="1" btnCheckboxFalse="0">
-           Add
+           <i class="fa fa-plus" aria-hidden="true"></i>
            </button>
     </div>
   </div>
@@ -32,3 +33,4 @@
             (numPages)="numPages = $event">
 </pagination>
 <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+</div>
