@@ -3,7 +3,7 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../../router.animations';
 import { environment } from '../../../environments/environment';
-import {LocalStorageService} from 'ngx-webstorage';
+import { LocalStorageService} from 'ngx-webstorage';
 import { User } from '../../models/user.model';
 
 @Component({

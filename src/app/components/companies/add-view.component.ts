@@ -1,35 +1,27 @@
-import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component, OnInit} from '@angular/core';
+import { BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Company} from './company';
+
 
 @Component({
   selector: 'app-add-view',
   templateUrl: './add-view.component.html',
-  styleUrls: ['./add-view.component.scss'],
-  animations:[
-    trigger('dialog',[
-      transition('void=>*',[
-        style({transform:'scale3d(.3,.3,.3)'}),
-        animate(100)
-      ]),
-      transition('*=>void',[
-        animate(100,style({transform:'scale3d(.0,.0,.0)'}))
-      ])
-    ])
-  ]
+  styleUrls: ['./add-view.component.scss']
 })
 export class AddViewComponent implements OnInit {
-  @Input() closable=true;
-  @Input() visible:boolean;
-  @Output() visibleChange:EventEmitter<boolean>=new EventEmitter<boolean>();
-
-  constructor() { }
+  submitted=false;
+  model=new Company('','','','')
+  constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit() {
   }
-  
-  close(){
-    this.visible=false;
-    this.visibleChange.emit(this.visible);
+  onSubmit(){
+    this.submitted=true;
+    console.log(JSON.stringify(this.model));
   }
+  onchange(evt){
+
+  }
+
 
 }

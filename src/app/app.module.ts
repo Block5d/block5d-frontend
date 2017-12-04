@@ -22,10 +22,9 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { Ng2TableModule } from './ng-table-module';
 
 import { AddViewComponent } from './components/companies/add-view.component';
-import { EditViewComponent } from './components/companies/edit-view.component';
-
-
+import { ModalModule} from 'ngx-bootstrap';
 // Import directives
+
 import {
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
@@ -77,7 +76,6 @@ const APP_COMPONENTS = [
   ProjectsComponent,
   CompaniesComponent,
   AddViewComponent,
-  EditViewComponent,
   AppBreadcrumbsComponent
 ];
 
@@ -101,7 +99,8 @@ const APP_COMPONENTS = [
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
-    Ng2TableModule
+    Ng2TableModule,
+    ModalModule.forRoot()
   ],
 
   providers: [{
@@ -110,7 +109,8 @@ const APP_COMPONENTS = [
         multi: true
       }, AuthGuard, ...APP_SERVICES
     ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[AddViewComponent]
 
 })
 

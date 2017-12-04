@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
 import { CompanyTableData} from './company-table-data';
+import  {AddViewComponent} from './add-view.component';
+
 @Component({
   selector: 'app-companies',
   templateUrl: './companies.component.html',
   styleUrls: ['./companies.component.scss'],
 })
 export class CompaniesComponent implements OnInit {
-  showDialog=false;
-
+  
+  bsModalRef:BsModalRef;
   public addBtnModel:string;
   public editBtnModel: string;
   public deleteBtnModel: string;
@@ -17,7 +22,6 @@ export class CompaniesComponent implements OnInit {
     {
       title: 'Name',
       name: 'name',
-      sort: false,
       filtering: {filterString: '', placeholder: 'Search by name'}
     },
     {
@@ -37,16 +41,7 @@ export class CompaniesComponent implements OnInit {
       name: 'type',
       sort: false,
       filtering: {filterString: '', placeholder: 'Search by type'}
-    },
-    {
-      title: 'Edit', 
-      name: 'edit'},
-    {
-      title:'Delete',
-      name:'delete'
-
     }
-
   ];
 
   public page:number=1;
@@ -64,7 +59,7 @@ export class CompaniesComponent implements OnInit {
   }
   private data:Array<any>=CompanyTableData;
 
-  public constructor() {
+  public constructor(private modalService: BsModalService) {
     this.length=this.data.length;
    }
 
@@ -158,6 +153,7 @@ export class CompaniesComponent implements OnInit {
   public onCellClick(data: any): any {
     console.log(data);
   }
- 
-
+  openModalWithComponent(){
+    this.bsModalRef= this.modalService.show(AddViewComponent);
+  }
 }
