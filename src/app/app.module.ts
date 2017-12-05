@@ -20,8 +20,8 @@ import { PaginationModule, TabsModule, ButtonsModule, BsDropdownModule } from 'n
 
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { Ng2TableModule } from './ng-table-module';
-
 import { AddViewComponent } from './components/companies/add-view.component';
+import { EditViewComponent } from './components/companies/edit-view/edit-view.component';
 import { ModalModule} from 'ngx-bootstrap';
 // Import directives
 
@@ -76,6 +76,7 @@ const APP_COMPONENTS = [
   ProjectsComponent,
   CompaniesComponent,
   AddViewComponent,
+  EditViewComponent,
   AppBreadcrumbsComponent
 ];
 
@@ -83,7 +84,8 @@ const APP_COMPONENTS = [
   declarations: [
     AppComponent,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
+    EditViewComponent
   ],
 
   imports: [
@@ -110,7 +112,8 @@ const APP_COMPONENTS = [
       }, AuthGuard, ...APP_SERVICES
     ],
   bootstrap: [AppComponent],
-  entryComponents:[AddViewComponent]
+  entryComponents:[AddViewComponent,
+                   EditViewComponent]
 
 })
 

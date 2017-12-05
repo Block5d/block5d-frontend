@@ -6,7 +6,6 @@
          <i class="fa fa-align-justify"></i> Companies Table
         </div>
         <div class="card-body">
-          <button>
               <div class="col-md-12">
                   <div class="row">
                     <div class="col-md-8">
@@ -34,7 +33,8 @@
                    type="button" 
                    class="btn btn-primary"
                    [(ngModel)]="editBtnModel" btnCheckbox
-                   btnCheckboxTrue="1" btnCheckboxFalse="0">
+                   btnCheckboxTrue="1" btnCheckboxFalse="0"
+                   (click)="openModalWithEdit()">
                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit
                    </button> 
                    <button type="button" class="btn btn-danger"
@@ -57,8 +57,6 @@
                  </pagination> 
                  <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
                  </div>
-      
-          </button>
         </div>
 
       </div>

@@ -4,6 +4,7 @@ import { BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 import { CompanyTableData} from './company-table-data';
 import  {AddViewComponent} from './add-view.component';
+import { EditViewComponent} from './edit-view/edit-view.component';
 
 @Component({
   selector: 'app-companies',
@@ -11,7 +12,7 @@ import  {AddViewComponent} from './add-view.component';
   styleUrls: ['./companies.component.scss'],
 })
 export class CompaniesComponent implements OnInit {
-  
+  bsModalRef2:BsModalRef;
   bsModalRef:BsModalRef;
   public addBtnModel:string;
   public editBtnModel: string;
@@ -59,7 +60,9 @@ export class CompaniesComponent implements OnInit {
   }
   private data:Array<any>=CompanyTableData;
 
-  public constructor(private modalService: BsModalService) {
+  public constructor(
+    private modalService: BsModalService,
+    private modalService2:BsModalService) {
     this.length=this.data.length;
    }
 
@@ -155,5 +158,8 @@ export class CompaniesComponent implements OnInit {
   }
   openModalWithComponent(){
     this.bsModalRef= this.modalService.show(AddViewComponent);
+  }
+  openModalWithEdit(){
+    this.bsModalRef2=this.modalService2.show(EditViewComponent)
   }
 }

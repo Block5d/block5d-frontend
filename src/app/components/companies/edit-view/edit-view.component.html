@@ -1,0 +1,104 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Company Detail</h4>
+    <button type="type" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12">
+          <form #regForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            
+            <div class="form-group">
+              <label for="companyName">Company Name</label>
+              <input
+                id="companyName"
+                #companyName="ngModel"
+                name="companyName"
+                type="text"
+                placeholder="AA"
+                [(ngModel)]="model.companyName"
+                class="form-control" required/>
+                <div *ngIf="companyName.errors && (companyName.touched || submitted)">
+                  <div [hidden]="!companyName.errors.required&&comapnyName.dirty"
+                    class="alert alert-danger">
+                    Company Name is required!
+                  </div>
+                </div>
+            </div>
+  
+            <div class="form-group">
+                <label for="companyId">Company ID</label>
+                <input
+                  id="companyId"
+                  #companyId="ngModel"
+                  name="companyId"
+                  type="number"
+                  placeholder="Your Id number"
+                  [(ngModel)]="model.companyId"
+                  pattern="[0-8]*" required/>
+                  <div *ngIf="companyId.errors && (companyId.touched || submitted)">
+                    <div [hidden]="!companyId.errors.required && companyId.dirty"
+                      class="alert alert-danger">
+                      Company Id is required!
+                    </div>
+                    <span 
+                    [hidden]="!companyId.errors.pattern" 
+                     class="alert alert-danger">
+                    Contact no. is invalid.
+                  </span>
+                  </div>
+              </div>
+  
+              <div class="form-group">
+                  <label for="companyReg">Registration Number</label>
+                  <input
+                    id="companyReg"
+                    #companyReg="ngModel"
+                    name="companyReg"
+                    type="number"
+                    placeholder="Registration number"
+                    [(ngModel)]="model.companyReg"
+                    pattern="[0-8]*"  required/>
+                    <div *ngIf="companyReg.errors && (companyReg.touched || submitted)">
+                      <div [hidden]="!companyReg.errors.required && companyReg.dirty"
+                        class="alert alert-danger">
+                        Registration number is required!
+                      </div>
+                      <span 
+                      [hidden]="!companyReg.errors.pattern" 
+                       class="alert alert-danger">
+                      Registration number is invalid.
+                    </span>
+                    </div>
+                </div>
+  
+                <div class="form-group">
+                    <label for="companyType">Company Type</label>
+                    <input
+                      id="companyType"
+                      #companyType="ngModel"
+                      name="companyType"
+                      type="text"
+                      placeholder="Constructor"
+                      [(ngModel)]="model.companyType"
+                      class="form-control" required/>
+                      <div *ngIf="companyType.errors && (companyType.touched || submitted)">
+                        <div [hidden]="!companyType.errors.required&& companyType.dirty"
+                          class="alert alert-danger">
+                          Company Type is required!
+                        </div>
+                      </div>
+                  </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" [disabled]="regForm.form.valid">
+        <i class="fa fa-check" aria-hidden="true"></i>Save</button>
+  </div>
